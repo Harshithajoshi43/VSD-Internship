@@ -11,13 +11,16 @@
 
 
 ![Screenshot 2024-11-26 155157](https://github.com/user-attachments/assets/ce03a69e-5bbc-48ba-8a9c-0c8cebba9ac1)
+</details>
 
+<details>
  <summary>Task2</summary>
 
  ![Screenshot 2024-11-26 163523](https://github.com/user-attachments/assets/9b1b99c2-67ea-481f-893a-ffc941de284e)
-
-
-
-
-
 </details>
+
+
+
+
+
+
