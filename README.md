@@ -176,9 +176,53 @@ For ADD: funct7 = 0000000.
 For SUB: funct7 = 0100000.
 
 2. The I-type (Immediate-type)
+   
    The I-type (Immediate-type) instruction format in RISC-V is used for instructions that operate on one register operand and an immediate value. These instructions are common for operations such as memory access, arithmetic with constants, or conditional jumps.
 The I-type format has the following fields:
-   
+1. opcode (7 bits):
+Purpose: Identifies the type of instruction (e.g., arithmetic, memory access, etc.).
+Placement: Bits [6:0].
+Details:
+Common opcodes for I-type:
+0000011: Load instructions (e.g., lw for load word).
+0010011: Arithmetic instructions with an immediate (e.g., addi).
+2. rd (Destination Register, 5 bits):
+Purpose: Specifies the destination register where the result of the operation will be stored.
+Placement: Bits [11:7].
+Details:
+Holds the result of the operation (e.g., the value loaded from memory or the result of arithmetic with the immediate).
+Example:
+If rd = 00010, the result is written to register x2.
+3. funct3 (Function Code, 3 bits):
+Purpose: Specifies the specific operation within the instruction type.
+Placement: Bits [14:12].
+Details:
+Differentiates between operations like addi, slti, or load instructions like lb (load byte), lw (load word).
+Examples:
+000: Add immediate (addi).
+010: Set less than immediate (slti).
+100: XOR immediate (xori).
+4. rs1 (Source Register 1, 5 bits):
+Purpose: Specifies the register providing the first operand.
+Placement: Bits [19:15].
+Details:
+The value in this register is combined with the immediate value (imm) in the specified operation.
+Example:
+If rs1 = 00001, it means the value in register x1 is used as the operand.
+5. imm (Immediate Value, 12 bits):
+Purpose: Provides a constant value or offset for the instruction.
+Placement: Bits [31:20].
+Details:
+Signed 12-bit value (using two's complement).
+Can represent values in the range of -2048 to 2047.
+Zero-extended or sign-extended as needed based on the operation.
+Used for:
+Arithmetic operations (e.g., addi adds rs1 and imm).
+Load instructions (e.g., memory address is rs1 + imm).
+Examples:
+For addi x3, x2, 10: imm = 10 (decimal).
+For lw x5, 100(x1): imm = 100 (offset).
+
 
 </details>
 
