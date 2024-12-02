@@ -575,16 +575,16 @@ Fields:
 9. lw s0, 12(sp)
 
 Instruction Type: I-Type Instruction < br / >
-Fields:< br / >
-imm[11:0]: 12< br / >
-rs1: sp (00010)< br / >
-funct3: 010 (Load Word)< br / >
-rd: s0 (10000)< br / >
-opcode: 0000011< br / >
-32-bit Representation: 000000001100 00010 010 10000 0000011< br / >
-10. beqz s0, 101fc< br / >
-Instruction Type: B-Type Instruction
-Fields:
+Fields: < br / >
+imm[11:0]: 12 < br / >
+rs1: sp (00010) < br / >
+funct3: 010 (Load Word) < br / >
+rd: s0 (10000) < br / >
+opcode: 0000011 < br / >
+32-bit Representation: 000000001100 00010 010 10000 0000011 < br / >
+**10. beqz s0, 101fc < br / >**
+Instruction Type: B-Type Instruction < br / >
+Fields: < br / >
 imm[12|10:5|4:1|11]: Offset to 101fc.
 rs1: s0 (10000)
 rs2: x0 (00000 for BEQZ)
