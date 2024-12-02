@@ -368,7 +368,7 @@ Example: If rd = 01010, it means the result is stored in register x10.
 
       Example: For a jump instruction (jal or jalr), opcode = 1101111.
 
- - imm (Immediate Value, 21 bits total):
+   - imm (Immediate Value, 21 bits total):
       Purpose: Specifies the offset to be added to the current Program Counter (PC) to calculate the target address.
    
       Placement:
@@ -381,14 +381,14 @@ Example: If rd = 01010, it means the result is stored in register x10.
    
       Example: If imm[20] = 0, imm[10:1] = 0101010101, imm[11] = 1, and imm[19:12] = 10101010, the full immediate value would be 0101010101101010101 (in binary), which is         0x55555 (349525 in decimal).
    
-- rs1 (5 bits):
+  - rs1 (5 bits):
       Purpose: This field is not used in J-type instructions and is always 0. It is reserved for compatibility with other instruction formats.
      
   Placement: Bits [19:15].
   
      Since J-type instructions do not require a source register, this field is ignored.
 
-- funct3 (3 bits):
+  - funct3 (3 bits):
   
     Specify the operation type. For J-type instructions, funct3 is always 000.  
 
@@ -396,7 +396,7 @@ Example: If rd = 01010, it means the result is stored in register x10.
 
     This field is always 000 in J-type instructions, as there is only one type of jump operation.
 
-- rd (Destination Register, 5 bits):
+  - rd (Destination Register, 5 bits):
   
     Specify the destination register to store the return address for jal (Jump and Link) instructions. For jalr (Jump and Link Register) instructions, this field is not     
     used.
