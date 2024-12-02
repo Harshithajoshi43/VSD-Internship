@@ -378,7 +378,9 @@ The R-type instruction format in RISC-V is designed to perform register-to-regis
 
 6. **The J-type (Jump-type)**
        The J-type (Jump-type) instruction format in RISC-V is designed for unconditional jump operations. These instructions allow the program to change its execution flow         by jumping to an address specified by a 
-       12-bit signed immediate value. The immediate value is used to calculate the target address relative to the current Program           Counter (PC).
+       12-bit signed immediate value. The immediate value is used to calculate the target address relative to the current Program Counter (PC).
+
+      Placement: Bits [19:15].
 
       The J-type format has the following fields:
 
@@ -408,29 +410,9 @@ The R-type instruction format in RISC-V is designed to perform register-to-regis
    - rs1 (5 bits):
       Purpose: This field is not used in J-type instructions and is always 0. It is reserved for compatibility with other instruction formats.
      
-  Placement: Bits [19:15].
   
-  Since J-type instructions do not require a source register, this field is ignored.
-
-  - funct3 (3 bits):
   
-    Specify the operation type. For J-type instructions, funct3 is always 000.  
 
-    Placement: Bits [14:12].
-
-    This field is always 000 in J-type instructions, as there is only one type of jump operation.
-
-  - rd (Destination Register, 5 bits):
-  
-    Specify the destination register to store the return address for jal (Jump and Link) instructions. For jalr (Jump and Link Register) instructions, this field is not     
-    used.
-
-    Placement: Bits [11:7].
-
-    In jal instructions, the address of the instruction immediately following the jump (i.e., the return address) is stored in the register specified by rd.
-    For jalr, the return address is not stored in a register as jalr does not have this behavior.
-
-    Example: For a jal instruction, if rd = 00001, the return address is stored in register x1.
 
 # 32-bit instructions from application ( Simple Calculator )
 
