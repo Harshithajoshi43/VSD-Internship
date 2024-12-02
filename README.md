@@ -231,6 +231,68 @@ Examples:
 For addi x3, x2, 10: imm = 10 (decimal).
 For lw x5, 100(x1): imm = 100 (offset).
 
+3. The S-type (Store-type)
+   The S-type (Store-type) instruction format in RISC-V is designed for instructions that store data from a register in memory. It uses a combination of a base address 
+   from one register and an immediate offset to calculate the effective memory address.
+
+   The S-type format has the following fields:
+
+   - opcode (7 bits):
+   Identifies the type of instruction (store in this case).
+
+   Placement: Bits [6:0].
+   
+   The common opcode for S-type instructions:
+   0100011: Store instructions (e.g., sw, sh, sb).
+      
+   Example: For a store word (sw) instruction: opcode = 0100011.
+
+   - imm (Immediate Value, 12 bits total):
+   Specifies the offset to be added to the base address in rs1 to calculate the effective memory address.
+
+   Placement:
+   Upper 7 bits (imm[11:5]): Bits [31:25].
+   Lower 5 bits (imm[4:0]): Bits [11:7].
+
+   Immediate is a signed 12-bit value (using two's complement).Can represent offsets from -2048 to 2047.
+   The two parts (imm[11:5] and imm[4:0]) are combined during instruction decoding to form the complete immediate.
+   
+   Example: If imm[11:5] = 0000001 and imm[4:0] = 01010, the full immediate is 000000101010 (42 in decimal).
+   
+   - rs2 (Source Register 2, 5 bits):
+   Specifies the register holding the data to be stored in memory.
+
+   Placement: Bits [24:20].
+   
+   The contents of this register are written to the memory address calculated from rs1 + imm.
+   
+   Example: If rs2 = 00010, the data to be stored comes from register x2.
+   
+   - rs1 (Source Register 1, 5 bits):
+   Specifies the register holding the base address for memory access.
+
+   Placement: Bits [19:15].
+   
+   The effective memory address is calculated as rs1 + imm.
+   
+   Example: If rs1 = 00001, the base address comes from register x1.
+   
+   - funct3 (Function Code, 3 bits):
+   Specifies the type of data to be stored (e.g., byte, half-word, word).
+
+   Placement: Bits [14:12].
+   
+   Determines the size of the data being stored.
+   Common values:
+   000: Store byte (sb).
+   001: Store half-word (sh).
+   010: Store word (sw).
+     
+  Example: For a store word instruction: funct3 = 010.
+
+
+
+
 
 </details>
 
