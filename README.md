@@ -572,69 +572,135 @@ Fields:
   
 32-bit Representation: (Encoded with offset fields)
 
-9. lw s0, 12(sp)
+**9. lw s0, 12(sp)**
 
-< br > Instruction Type: I-Type Instruction < br / >
-< br >Fields: < br / >
-< br >imm[11:0]: 12 < br / >
-< br >rs1: sp (00010) < br / >
-< br >funct3: 010 (Load Word) < br / >
-< br >rd: s0 (10000) < br / >
-< br >opcode: 0000011 < br / >
-< br >32-bit Representation: 000000001100 00010 010 10000 0000011 < br / >
-**10. beqz s0, 101fc < br / >**
-Instruction Type: B-Type Instruction < br / >
-Fields: < br / >
-imm[12|10:5|4:1|11]: Offset to 101fc.
-rs1: s0 (10000)
-rs2: x0 (00000 for BEQZ)
-funct3: 000
-opcode: 1100011
-32-bit Representation: (Encoded with offset fields)
-11. mv a1, s0
-Instruction Type: Pseudo-Instruction (ADDI)
-Fields:
-imm[11:0]: 0
-rs1: s0 (10000)
-funct3: 000
-rd: a1 (01001)
-opcode: 0010011
-32-bit Representation: 000000000000 10000 000 01001 0010011
-12. j 10198
-Instruction Type: J-Type Instruction
-Fields:
-imm[20|10:1|11|19:12]: Offset to 10198.
-rd: x0 (Implicit for j)
-opcode: 1101111
-32-bit Representation: (Encoded with offset fields)
-13. ld ra, 40(sp)
 Instruction Type: I-Type Instruction
+
+
 Fields:
-imm[11:0]: 40
-rs1: sp (00010)
-funct3: 011 (Load Doubleword)
-rd: ra (00001)
+  
+  imm[11:0]: 12
+  
+  rs1: sp (00010)
+  
+  funct3: 010 (Load Word)
+  
+  rd: s0 (10000)
+
 opcode: 0000011
+
+32-bit Representation: 000000001100 00010 010 10000 0000011
+
+**10. beqz s0, 101fc**
+
+Instruction Type: B-Type Instruction
+
+Fields:
+  
+  imm[12|10:5|4:1|11]: Offset to 101fc.
+  
+  rs1: s0 (10000)
+  
+  rs2: x0 (00000 for BEQZ)
+  
+  funct3: 000
+  
+  opcode: 1100011
+
+32-bit Representation: (Encoded with offset fields)
+
+**11. mv a1, s0**
+
+Instruction Type: Pseudo-Instruction (ADDI)
+
+Fields:
+
+imm[11:0]: 0
+
+rs1: s0 (10000)
+
+funct3: 000
+  
+  rd: a1 (01001)
+  
+  
+  opcode: 0010011
+
+32-bit Representation: 000000000000 10000 000 01001 0010011
+
+**12. j 10198**
+
+Instruction Type: J-Type Instruction
+
+Fields:
+  
+  imm[20|10:1|11|19:12]: Offset to 10198.
+  
+  rd: x0 (Implicit for j)
+  
+  opcode: 1101111
+
+32-bit Representation: (Encoded with offset fields)
+
+**13. ld ra, 40(sp)**
+
+Instruction Type: I-Type Instruction
+
+Fields:
+  
+  imm[11:0]: 40
+  
+  rs1: sp (00010)
+  
+  funct3: 011 (Load Doubleword)
+
+  rd: ra (00001)
+  
+  opcode: 0000011
+
 32-bit Representation: 000000101000 00010 011 00001 0000011
-14. subw a3, a3, a2
+
+**14. subw a3, a3, a2**
+
 Instruction Type: R-Type Instruction
+
 Fields:
-funct7: 0100000 (Subtraction)
-rs2: a2 (00010)
-rs1: a3 (00011)
-funct3: 000
-rd: a3 (00011)
-opcode: 0111011
+  
+  funct7: 0100000 (Subtraction)
+  
+  rs2: a2 (00010)
+
+  rs1: a3 (00011)
+  
+  funct3: 000
+
+  rd: a3 (00011)
+
+  
+  opcode: 0111011
+
 32-bit Representation: 0100000 00010 00011 000 00011 0111011
-15. addw a3, a3, a2
+
+**15. addw a3, a3, a2**
+
+
 Instruction Type: R-Type Instruction
+
 Fields:
-funct7: 0000000 (Addition)
-rs2: a2 (00010)
-rs1: a3 (00011)
-funct3: 000
-rd: a3 (00011)
-opcode: 0111011
+
+  
+  funct7: 0000000 (Addition)
+  
+  rs2: a2 (00010)
+  
+  rs1: a3 (00011)
+  
+  funct3: 000
+  
+  rd: a3 (00011)
+  
+  opcode: 0111011
+
 32-bit Representation: 0000000 00010 00011 000 00011 0111011
 
 </details>
