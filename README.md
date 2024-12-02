@@ -92,7 +92,6 @@ spike pk simplecalc.o
 ```
 
 ![Screenshot 2024-11-28 005212](https://github.com/user-attachments/assets/3ac04ab4-e2ee-4d58-8e6a-ed56fe0cdffa)
-
 </details>
 
 
