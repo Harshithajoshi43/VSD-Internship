@@ -441,133 +441,201 @@ The R-type instruction format in RISC-V is designed to perform register-to-regis
   Instruction Type: U-Type Instruction
   
   Fields:
-    imm[31:12]: 0x2b (Upper 20-bit immediate value)
-    rd: a0
-    opcode: 0110111 (LUI)
+  
+  imm[31:12]: 0x2b (Upper 20-bit immediate value)
+  
+  rd: a0
+  
+  opcode: 0110111 (LUI)
+  
 32-bit Representation: 00000000001010110000 00010 0110111
 
 **2. addi sp, sp, -48**
+
 Instruction Type: I-Type Instruction
+
 Fields:
+
   imm[11:0]: -48 (Signed immediate: 111111111100)
+  
   rs1: sp
+  
   funct3: 000 (Addition)
+  
   rd: sp
+  
   opcode: 0010011
+  
 32-bit Representation: 111111111100 00010 000 00010 0010011
 
-3. sd ra, 40(sp)
+**3. sd ra, 40(sp)**
 Instruction Type: S-Type Instruction
 Fields:
+
   imm[11:5]: 101000 (Higher 7-bits of offset)
+  
   rs2: ra
+  
   rs1: sp
+  
   funct3: 011 (Store Doubleword)
+  
   imm[4:0]: 01000 (Lower 5-bits of offset)
+  
   opcode: 0100011
+  
 32-bit Representation: 1010000 00001 00010 011 01000 0100011
-   
-5. jal ra, 106c <printf>
+
+**4. jal ra, 106c <printf>**
+
 Instruction Type: J-Type Instruction
+
 Fields:
+
 imm[20|10:1|11|19:12]: Address offset to 106c split into fields.
-rd: ra
+
+rd: ra (00001)
+
 opcode: 1101111 (JAL)
-32-bit Representation: Binary encoding based on the offset.
-6. lbu a5, 7(sp)
+
+32-bit Representation: (Encoded based on the offset)
+
+**5. lbu a5, 7(sp)**
+
 Instruction Type: I-Type Instruction
+
 Fields:
-imm[11:0]: 7
-rs1: sp
-funct3: 100 (Load Byte Unsigned)
-rd: a5
-opcode: 0000011
+
+  imm[11:0]: 7
+  
+  rs1: sp (00010)
+  
+  funct3: 100 (Load Byte Unsigned)
+
+  rd: a5 (00101)
+
+  opcode: 0000011
+
 32-bit Representation: 000000000111 00010 100 00101 0000011
-7. li a4, 0
+
+**6. li a4, 4**
+
 Instruction Type: Pseudo-Instruction (ADDI)
+
 Fields:
-imm[11:0]: 0
-rs1: x0
-funct3: 000
-rd: a4
-opcode: 0010011
-32-bit Representation: 000000000000 00000 000 00100 0010011
-8. bgeu a4, a5, 1014c
+
+  imm[11:0]: 4
+  
+  rs1: x0 (00000)
+  
+  funct3: 000
+  
+  rd: a4 (00100)
+  
+  opcode: 0010011
+  
+32-bit Representation: 000000000100 00000 000 00100 0010011
+
+**7. beq a5, a4, 101dc**
+
 Instruction Type: B-Type Instruction
+
 Fields:
-imm[12|10:5|4:1|11]: Offset to 1014c.
-rs1: a4
-rs2: a5
-funct3: 011 (Branch if Greater or Equal Unsigned)
+
+imm[12|10:5|4:1|11]: Offset to 101dc split into parts.
+
+rs1: a5 (00101)
+
+rs2: a4 (00100)
+
+funct3: 000 (Branch if Equal)
+
 opcode: 1100011
-32-bit Representation: Encoded with offset fields.
-9. bne a5, ra, 101fc
+
+32-bit Representation: (Encoded with offset fields)
+
+8. bgeu a5, a4, 101c4
+
+Instruction Type: B-Type Instruction
+
+Fields:
+
+  imm[12|10:5|4:1|11]: Offset to 101c4.
+  
+  rs1: a5 (00101)
+  
+  rs2: a4 (00100)
+  
+  funct3: 011 (Branch if Greater or Equal Unsigned)
+  
+  opcode: 1100011
+  
+32-bit Representation: (Encoded with offset fields)
+
+9. lw s0, 12(sp)
+
+Instruction Type: I-Type Instruction < br / >
+Fields:< br / >
+imm[11:0]: 12< br / >
+rs1: sp (00010)< br / >
+funct3: 010 (Load Word)< br / >
+rd: s0 (10000)< br / >
+opcode: 0000011< br / >
+32-bit Representation: 000000001100 00010 010 10000 0000011< br / >
+10. beqz s0, 101fc< br / >
 Instruction Type: B-Type Instruction
 Fields:
 imm[12|10:5|4:1|11]: Offset to 101fc.
-rs1: a5
-rs2: ra
-funct3: 001 (Branch if Not Equal)
-opcode: 1100011
-32-bit Representation: Binary encoding based on offset.
-10. lw s0, 12(sp)
-Instruction Type: I-Type Instruction
-Fields:
-imm[11:0]: 12
-rs1: sp
-funct3: 010 (Load Word)
-rd: s0
-opcode: 0000011
-32-bit Representation: 000000001100 00010 010 10000 0000011
-11. beqz s0, 101fc
-Instruction Type: B-Type Instruction
-Fields:
-imm[12|10:5|4:1|11]: Offset to 101fc.
-rs1: s0
-rs2: x0 (Implicit for BEQZ)
+rs1: s0 (10000)
+rs2: x0 (00000 for BEQZ)
 funct3: 000
 opcode: 1100011
-32-bit Representation: Encoded with offset fields.
-12. mv a1, s0
+32-bit Representation: (Encoded with offset fields)
+11. mv a1, s0
 Instruction Type: Pseudo-Instruction (ADDI)
 Fields:
 imm[11:0]: 0
-rs1: s0
+rs1: s0 (10000)
 funct3: 000
-rd: a1
+rd: a1 (01001)
 opcode: 0010011
 32-bit Representation: 000000000000 10000 000 01001 0010011
-13. j 10198
+12. j 10198
 Instruction Type: J-Type Instruction
 Fields:
-imm[20|10:1|11|19:12]: Address offset to 10198.
+imm[20|10:1|11|19:12]: Offset to 10198.
 rd: x0 (Implicit for j)
 opcode: 1101111
-32-bit Representation: Encoded with offset fields.
-14. ld ra, 40(sp)
+32-bit Representation: (Encoded with offset fields)
+13. ld ra, 40(sp)
 Instruction Type: I-Type Instruction
 Fields:
 imm[11:0]: 40
-rs1: sp
+rs1: sp (00010)
 funct3: 011 (Load Doubleword)
-rd: ra
+rd: ra (00001)
 opcode: 0000011
 32-bit Representation: 000000101000 00010 011 00001 0000011
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+14. subw a3, a3, a2
+Instruction Type: R-Type Instruction
+Fields:
+funct7: 0100000 (Subtraction)
+rs2: a2 (00010)
+rs1: a3 (00011)
+funct3: 000
+rd: a3 (00011)
+opcode: 0111011
+32-bit Representation: 0100000 00010 00011 000 00011 0111011
+15. addw a3, a3, a2
+Instruction Type: R-Type Instruction
+Fields:
+funct7: 0000000 (Addition)
+rs2: a2 (00010)
+rs1: a3 (00011)
+funct3: 000
+rd: a3 (00011)
+opcode: 0111011
+32-bit Representation: 0000000 00010 00011 000 00011 0111011
 
 </details>
 
