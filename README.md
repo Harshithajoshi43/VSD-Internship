@@ -110,9 +110,11 @@ RISC-V Instruction Sets
 <img width="772" alt="3808 1535301636" src="https://github.com/user-attachments/assets/f85cfaf6-348d-4571-83c3-7078501960c8">
 
 **1. R-Type:**
+
 The R-type instruction format in RISC-V is designed to perform register-to-register operations. Each field has a specific role, contributing to the functionality and flexibility of the instruction. Here's a detailed breakdown of each field:
 
   **- Opcode (7 bits)**
+  
       Identifies the broad category of the instruction (e.g., arithmetic, logical, shift). The opcode determines the type of operation and the instruction format (e.g., R- 
       type, I-type, S-type).
 
