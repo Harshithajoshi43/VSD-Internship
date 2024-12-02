@@ -408,6 +408,19 @@ Example: If rd = 01010, it means the result is stored in register x10.
 
     Example: For a jal instruction, if rd = 00001, the return address is stored in register x1.
 
+# 32-bit instructions from application ( Simple Calculator )
+
+![Screenshot 2024-12-02 211938](https://github.com/user-attachments/assets/7ee28e7c-6cde-4e8e-9678-d7670f5eebc7)
+
+
+
+
+
+
+
+
+
+
 
 
 
