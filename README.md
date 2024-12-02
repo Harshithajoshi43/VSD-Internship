@@ -113,16 +113,16 @@ RISC-V Instruction Sets
 
 The R-type instruction format in RISC-V is designed to perform register-to-register operations. Each field has a specific role, contributing to the functionality and flexibility of the instruction. Here's a detailed breakdown of each field:
 
-  **- Opcode (7 bits)**
+ - Opcode (7 bits)
   
-      Identifies the broad category of the instruction (e.g., arithmetic, logical, shift). The opcode determines the type of operation and the instruction format (e.g., R- 
-      type, I-type, S-type).
+      Identifies the broad category of the instruction (e.g., arithmetic, logical, shift). The opcode determines the type of operation and the instruction format (e.g., R- type, I-type, S-type).
 
       Placement: Bits [6:0].
 
       Examples: 0110011: R-type operations (add, sub, and, or, etc.).
 
   - rd (Destination Register, 5 bits)
+    
       Specify the register where the result of the operation will be stored.
 
       Placement: Bits [11:7].
@@ -130,9 +130,10 @@ The R-type instruction format in RISC-V is designed to perform register-to-regis
       The register index ranges from 0 to 31, corresponding to the 32 general-purpose registers in RISC-V (e.g., x0 to x31).
       Writing to x0 is effectively a NOP (writes are ignored since x0 is hardwired to 0).
 
-Example: If rd = 01010, it means the result is stored in register x10.
+      Example: If rd = 01010, it means the result is stored in register x10.
 
   - rd (Destination Register, 5 bits)
+    
       Specifies the specific operation to be performed within the instruction category defined by opcode.
 
       Placement: Bits [14:12].
@@ -147,6 +148,7 @@ Example: If rd = 01010, it means the result is stored in register x10.
       For an AND instruction: funct3 = 111.
 
   - rs1 (Source Register 1, 5 bits)
+   
       Specifies the first source register containing one of the operands.
 
       Placement: Bits [19:15].
@@ -156,6 +158,7 @@ Example: If rd = 01010, it means the result is stored in register x10.
       Example: If rs1 = 00001, it means the first operand is in register x1.
 
   - rs2 (Source Register 2, 5 bits)
+    
       Specifies the second source register containing the second operand.
 
       Placement: Bits [24:20].
@@ -165,6 +168,7 @@ Example: If rd = 01010, it means the result is stored in register x10.
       Example: If rs2 = 00010, it means the second operand is in register x2.
 
   - funct7 (Function Code, 7 bits)
+    
       Provides additional specificity to distinguish between operations that share the same opcode and funct3.
 
       Placement: Bits [31:25].
@@ -178,10 +182,11 @@ Example: If rd = 01010, it means the result is stored in register x10.
       For ADD: funct7 = 0000000.
       For SUB: funct7 = 0100000.
 
-2. The I-type (Immediate-type)
+    **2. The I-type (Immediate-type)**
    
-     The I-type (Immediate-type) instruction format in RISC-V is used for instructions that operate on one register operand and an immediate value. These instructions are        common for operations such as memory access, arithmetic with constants, or conditional jumps.
-      The I-type format has the following fields:
+       The I-type (Immediate-type) instruction format in RISC-V is used for instructions that operate on one register operand and an immediate value. These instructions are        common for operations such as memory 
+       access, arithmetic with constants, or conditional jumps.
+       The I-type format has the following fields:
    
 - opcode (7 bits):
     Identifies the type of instruction (e.g., arithmetic, memory access, etc.).
@@ -235,7 +240,8 @@ Example: If rd = 01010, it means the result is stored in register x10.
     For addi x3, x2, 10: imm = 10 (decimal).
     For lw x5, 100(x1): imm = 100 (offset).
 
-3. The S-type (Store-type)
+**3. The S-type (Store-type)**
+   
    The S-type (Store-type) instruction format in RISC-V is designed for instructions that store data from a register in memory. It uses a combination of a base address 
    from one register and an immediate offset to calculate the effective memory address.
 
@@ -294,7 +300,21 @@ Example: If rd = 01010, it means the result is stored in register x10.
      
       Example: For a store word instruction: funct3 = 010.
 
-4. The B-type (Branch-type)
+**4. The U-type instruction** 
+      The U-type instruction format in the RISC-V architecture is used primarily for instructions that involve immediate values, typically for forming larger constants or calculating addresses. The U-type format is part 
+      of the 32-bit RISC-V instruction set.
+      The U-type instruction has the following 32-bit structure:
+      
+   - Immediate (31–12):
+      
+        This is a 20-bit field that provides the upper 20 bits of a constant or address. The value is sign-extended when needed. The lower 12 bits are typically assumed to be zeros.
+   - Destination Register (rd) (11–7): Specifies the register where the result of the instruction will be stored.
+   - Opcode (6–0): Identifies the specific instruction. For U-type, common opcodes are:
+                LUI (Load Upper Immediate): Opcode 0110111.
+                AUIPC (Add Upper Immediate to PC): Opcode 0010111.
+
+
+**5. The B-type (Branch-type)**
        The B-type (Branch-type) instruction format in RISC-V is designed for conditional branch instructions that control the flow of execution based on a comparison     
        between two registers. These instructions are typically used to implement if-else conditions, loops, and other control flow operations.
        The B-type format has the following fields:
@@ -321,14 +341,14 @@ Example: If rd = 01010, it means the result is stored in register x10.
      
         Example: If imm[12] = 0, imm[10:5] = 000100, imm[4:1] = 0101, and imm[11] = 1, the complete immediate would be 000100010101 (in binary), which is 0x115 (277 in              decimal).
      
-    - rs2 (Source Register 2, 5 bits):
+  - rs2 (Source Register 2, 5 bits):
         Specifies the second register that is compared to rs1 for the branch decision.
 
-        Placement: Bits [24:20].
+    Placement: Bits [24:20].
 
-        The value in rs2 is compared with the value in rs1. This field is used in the comparison operation for the branch (e.g., beq, bne).
+    The value in rs2 is compared with the value in rs1. This field is used in the comparison operation for the branch (e.g., beq, bne).
       
-        Example: If rs2 = 00010, the second operand is x2.
+    Example: If rs2 = 00010, the second operand is x2.
 
    - rs1 (Source Register 1, 5 bits):
         Specifies the first register that is compared to rs2.
@@ -356,7 +376,7 @@ Example: If rd = 01010, it means the result is stored in register x10.
         beq (branch if equal): funct3 = 000.
         bne (branch if not equal): funct3 = 001.
 
-5. **The J-type (Jump-type)**
+6. **The J-type (Jump-type)**
        The J-type (Jump-type) instruction format in RISC-V is designed for unconditional jump operations. These instructions allow the program to change its execution flow         by jumping to an address specified by a 
        12-bit signed immediate value. The immediate value is used to calculate the target address relative to the current Program           Counter (PC).
 
@@ -390,11 +410,11 @@ Example: If rd = 01010, it means the result is stored in register x10.
      
   Placement: Bits [19:15].
   
-     Since J-type instructions do not require a source register, this field is ignored.
+  Since J-type instructions do not require a source register, this field is ignored.
 
   - funct3 (3 bits):
   
-        Specify the operation type. For J-type instructions, funct3 is always 000.  
+    Specify the operation type. For J-type instructions, funct3 is always 000.  
 
     Placement: Bits [14:12].
 
@@ -415,6 +435,124 @@ Example: If rd = 01010, it means the result is stored in register x10.
 # 32-bit instructions from application ( Simple Calculator )
 
 ![Screenshot 2024-12-02 211938](https://github.com/user-attachments/assets/7ee28e7c-6cde-4e8e-9678-d7670f5eebc7)
+
+**1. lui a0, 0x2b**
+
+  Instruction Type: U-Type Instruction
+  
+  Fields:
+    imm[31:12]: 0x2b (Upper 20-bit immediate value)
+    rd: a0
+    opcode: 0110111 (LUI)
+32-bit Representation: 00000000001010110000 00010 0110111
+
+**2. addi sp, sp, -48**
+Instruction Type: I-Type Instruction
+Fields:
+  imm[11:0]: -48 (Signed immediate: 111111111100)
+  rs1: sp
+  funct3: 000 (Addition)
+  rd: sp
+  opcode: 0010011
+32-bit Representation: 111111111100 00010 000 00010 0010011
+
+3. sd ra, 40(sp)
+Instruction Type: S-Type Instruction
+Fields:
+  imm[11:5]: 101000 (Higher 7-bits of offset)
+  rs2: ra
+  rs1: sp
+  funct3: 011 (Store Doubleword)
+  imm[4:0]: 01000 (Lower 5-bits of offset)
+  opcode: 0100011
+32-bit Representation: 1010000 00001 00010 011 01000 0100011
+   
+5. jal ra, 106c <printf>
+Instruction Type: J-Type Instruction
+Fields:
+imm[20|10:1|11|19:12]: Address offset to 106c split into fields.
+rd: ra
+opcode: 1101111 (JAL)
+32-bit Representation: Binary encoding based on the offset.
+6. lbu a5, 7(sp)
+Instruction Type: I-Type Instruction
+Fields:
+imm[11:0]: 7
+rs1: sp
+funct3: 100 (Load Byte Unsigned)
+rd: a5
+opcode: 0000011
+32-bit Representation: 000000000111 00010 100 00101 0000011
+7. li a4, 0
+Instruction Type: Pseudo-Instruction (ADDI)
+Fields:
+imm[11:0]: 0
+rs1: x0
+funct3: 000
+rd: a4
+opcode: 0010011
+32-bit Representation: 000000000000 00000 000 00100 0010011
+8. bgeu a4, a5, 1014c
+Instruction Type: B-Type Instruction
+Fields:
+imm[12|10:5|4:1|11]: Offset to 1014c.
+rs1: a4
+rs2: a5
+funct3: 011 (Branch if Greater or Equal Unsigned)
+opcode: 1100011
+32-bit Representation: Encoded with offset fields.
+9. bne a5, ra, 101fc
+Instruction Type: B-Type Instruction
+Fields:
+imm[12|10:5|4:1|11]: Offset to 101fc.
+rs1: a5
+rs2: ra
+funct3: 001 (Branch if Not Equal)
+opcode: 1100011
+32-bit Representation: Binary encoding based on offset.
+10. lw s0, 12(sp)
+Instruction Type: I-Type Instruction
+Fields:
+imm[11:0]: 12
+rs1: sp
+funct3: 010 (Load Word)
+rd: s0
+opcode: 0000011
+32-bit Representation: 000000001100 00010 010 10000 0000011
+11. beqz s0, 101fc
+Instruction Type: B-Type Instruction
+Fields:
+imm[12|10:5|4:1|11]: Offset to 101fc.
+rs1: s0
+rs2: x0 (Implicit for BEQZ)
+funct3: 000
+opcode: 1100011
+32-bit Representation: Encoded with offset fields.
+12. mv a1, s0
+Instruction Type: Pseudo-Instruction (ADDI)
+Fields:
+imm[11:0]: 0
+rs1: s0
+funct3: 000
+rd: a1
+opcode: 0010011
+32-bit Representation: 000000000000 10000 000 01001 0010011
+13. j 10198
+Instruction Type: J-Type Instruction
+Fields:
+imm[20|10:1|11|19:12]: Address offset to 10198.
+rd: x0 (Implicit for j)
+opcode: 1101111
+32-bit Representation: Encoded with offset fields.
+14. ld ra, 40(sp)
+Instruction Type: I-Type Instruction
+Fields:
+imm[11:0]: 40
+rs1: sp
+funct3: 011 (Load Doubleword)
+rd: ra
+opcode: 0000011
+32-bit Representation: 000000101000 00010 011 00001 0000011
 
 
 
