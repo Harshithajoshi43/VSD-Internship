@@ -349,10 +349,64 @@ Example: If rd = 01010, it means the result is stored in register x10.
         101: Branch if greater than or equal (bge).
         110: Branch if unsigned less than (bltu).
         111: Branch if unsigned greater than or equal (bgeu).\n
-Examples:
+        Examples:
 
-beq (branch if equal): funct3 = 000.
-bne (branch if not equal): funct3 = 001.
+        beq (branch if equal): funct3 = 000.
+        bne (branch if not equal): funct3 = 001.
+
+5. The J-type (Jump-type)
+       The J-type (Jump-type) instruction format in RISC-V is designed for unconditional jump operations. These instructions allow the program to change its execution flow         by jumping to an address specified by a 12-bit signed immediate value. The immediate value is used to calculate the target address relative to the current Program           Counter (PC).
+
+      The J-type format has the following fields:
+
+   - opcode (7 bits):
+      Identifies the type of instruction. In J-type, the opcode specifies that the instruction is a jump.
+     
+      Placement: Bits [6:0].
+
+      The opcode for J-type instructions is always 1101111 (which indicates the jump instruction category).
+
+      Example: For a jump instruction (jal or jalr), opcode = 1101111.
+
+ - imm (Immediate Value, 21 bits total):
+      Purpose: Specifies the offset to be added to the current Program Counter (PC) to calculate the target address.
+   
+      Placement:
+      imm[20]: Most significant bit of the immediate value (bit 20).
+      imm[10:1]: Middle 10 bits of the immediate value.
+      imm[11]: Second most significant bit (bit 11).
+      imm[19:12]: Lower 8 bits of the immediate value.
+
+      The immediate value is signed and used to calculate the target address relative to the current instruction. The immediate value is shifted left by 1 bit to account          for the word-aligned address (because instructions are 4 bytes in RISC-V). This offset allows the jump to be within a ±1 MiB range (a total of 2^20 bytes, or 2^18            words).
+   
+      Example: If imm[20] = 0, imm[10:1] = 0101010101, imm[11] = 1, and imm[19:12] = 10101010, the full immediate value would be 0101010101101010101 (in binary), which is         0x55555 (349525 in decimal).
+   
+- rs1 (5 bits):
+      Purpose: This field is not used in J-type instructions and is always 0. It is reserved for compatibility with other instruction formats.
+     
+  Placement: Bits [19:15].
+  
+     Since J-type instructions do not require a source register, this field is ignored.
+
+- funct3 (3 bits):
+  
+    Specify the operation type. For J-type instructions, funct3 is always 000.  
+
+    Placement: Bits [14:12].
+
+    This field is always 000 in J-type instructions, as there is only one type of jump operation.
+
+- rd (Destination Register, 5 bits):
+  
+    Specify the destination register to store the return address for jal (Jump and Link) instructions. For jalr (Jump and Link Register) instructions, this field is not     
+    used.
+
+    Placement: Bits [11:7].
+
+    In jal instructions, the address of the instruction immediately following the jump (i.e., the return address) is stored in the register specified by rd.
+    For jalr, the return address is not stored in a register as jalr does not have this behavior.
+
+    Example: For a jal instruction, if rd = 00001, the return address is stored in register x1.
 
 
 
