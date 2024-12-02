@@ -119,7 +119,7 @@ Placement: Bits [6:0].
 
 Examples: 0110011: R-type operations (add, sub, and, or, etc.).
 
-    2. rd (Destination Register, 5 bits)
+  2. rd (Destination Register, 5 bits)
 Specify the register where the result of the operation will be stored.
 
 Placement: Bits [11:7].
