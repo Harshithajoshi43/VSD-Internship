@@ -118,8 +118,7 @@ Identifies the broad category of the instruction (e.g., arithmetic, logical, shi
 Placement: Bits [6:0].
 
 Examples: 0110011: R-type operations (add, sub, and, or, etc.).
-
-  2. rd (Destination Register, 5 bits)
+    2. rd (Destination Register, 5 bits)
 Specify the register where the result of the operation will be stored.
 
 Placement: Bits [11:7].
@@ -128,7 +127,7 @@ Writing to x0 is effectively a NOP (writes are ignored since x0 is hardwired to 
 
 Example: If rd = 01010, it means the result is stored in register x10.
 
-    3. funct3 (Function Code, 3 bits)
+  3. funct3 (Function Code, 3 bits)
 Specifies the specific operation to be performed within the instruction category defined by opcode.
 
 Placement: Bits [14:12].
