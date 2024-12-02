@@ -574,14 +574,14 @@ Fields:
 
 9. lw s0, 12(sp)
 
-< br> Instruction Type: I-Type Instruction < br / >
-< br>Fields: < br / >
-< br>imm[11:0]: 12 < br / >
-< br>rs1: sp (00010) < br / >
-< br>funct3: 010 (Load Word) < br / >
-< br>rd: s0 (10000) < br / >
-< br>opcode: 0000011 < br / >
-< br>32-bit Representation: 000000001100 00010 010 10000 0000011 < br / >
+< br > Instruction Type: I-Type Instruction < br / >
+< br >Fields: < br / >
+< br >imm[11:0]: 12 < br / >
+< br >rs1: sp (00010) < br / >
+< br >funct3: 010 (Load Word) < br / >
+< br >rd: s0 (10000) < br / >
+< br >opcode: 0000011 < br / >
+< br >32-bit Representation: 000000001100 00010 010 10000 0000011 < br / >
 **10. beqz s0, 101fc < br / >**
 Instruction Type: B-Type Instruction < br / >
 Fields: < br / >
