@@ -381,7 +381,7 @@ Example: If rd = 01010, it means the result is stored in register x10.
    
       Example: If imm[20] = 0, imm[10:1] = 0101010101, imm[11] = 1, and imm[19:12] = 10101010, the full immediate value would be 0101010101101010101 (in binary), which is         0x55555 (349525 in decimal).
    
-  - rs1 (5 bits):
+   - rs1 (5 bits):
       Purpose: This field is not used in J-type instructions and is always 0. It is reserved for compatibility with other instruction formats.
      
   Placement: Bits [19:15].
@@ -390,7 +390,7 @@ Example: If rd = 01010, it means the result is stored in register x10.
 
   - funct3 (3 bits):
   
-    Specify the operation type. For J-type instructions, funct3 is always 000.  
+        Specify the operation type. For J-type instructions, funct3 is always 000.  
 
     Placement: Bits [14:12].
 
