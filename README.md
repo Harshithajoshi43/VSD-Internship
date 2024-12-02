@@ -112,15 +112,14 @@ RISC-V Instruction Sets
 1. R-Type:
 The R-type instruction format in RISC-V is designed to perform register-to-register operations. Each field has a specific role, contributing to the functionality and flexibility of the instruction. Here's a detailed breakdown of each field:
 
-
-  1. Opcode (7 bits)
+  *1. Opcode (7 bits)
 Identifies the broad category of the instruction (e.g., arithmetic, logical, shift). The opcode determines the type of operation and the instruction format (e.g., R-type, I-type, S-type).
 
 Placement: Bits [6:0].
 
 Examples: 0110011: R-type operations (add, sub, and, or, etc.).
 
-  2. rd (Destination Register, 5 bits)
+  *2. rd (Destination Register, 5 bits)
 Specify the register where the result of the operation will be stored.
 
 Placement: Bits [11:7].
