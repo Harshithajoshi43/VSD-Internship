@@ -206,7 +206,7 @@ Examples:
 010: Set less than immediate (slti).
 100: XOR immediate (xori).
 
-4. rs1 (Source Register 1, 5 bits):
+- rs1 (Source Register 1, 5 bits):
 Specifies the register providing the first operand.
 
 Placement: Bits [19:15].
@@ -215,7 +215,7 @@ The value in this register is combined with the immediate value (imm) in the spe
 
 Example: If rs1 = 00001, it means the value in register x1 is used as the operand.
 
-6. imm (Immediate Value, 12 bits):
+- imm (Immediate Value, 12 bits):
 Provides a constant value or offset for the instruction.
 
 Placement: Bits [31:20].
