@@ -93,7 +93,18 @@ spike pk simplecalc.o
 
 ![Screenshot 2024-11-28 005212](https://github.com/user-attachments/assets/3ac04ab4-e2ee-4d58-8e6a-ed56fe0cdffa)
 </details>
+<details>
+  <summary>Task3</summary>
 
+RISC-V RV32 refers to a 32-bit RISC-V instruction set architecture (ISA) implementation. It is an open, royalty-free ISA designed to be simple, efficient, and scalable for various applications. The RISC-V RV32 instruction set has 6 main instruction types, based on their encoding format. These types are determined by how operands and immediate values are encoded in the instruction.
+The six instruction types are:
+1. R-Type (Register Type)
+2. I-Type (Immediate Type)
+3. S-Type (Store Type)
+4. U-Type (Branch Type)
+5. B-Type (Upper Immediate Type)
+6. J-Type (Jump Type)
+</details>
 
 
 
