@@ -175,6 +175,11 @@ Examples:
 For ADD: funct7 = 0000000.
 For SUB: funct7 = 0100000.
 
+2. The I-type (Immediate-type)
+   The I-type (Immediate-type) instruction format in RISC-V is used for instructions that operate on one register operand and an immediate value. These instructions are common for operations such as memory access, arithmetic with constants, or conditional jumps.
+The I-type format has the following fields:
+   
+
 </details>
 
 
