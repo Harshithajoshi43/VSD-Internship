@@ -104,6 +104,10 @@ The six instruction types are:
 4. U-Type (Branch Type)
 5. B-Type (Upper Immediate Type)
 6. J-Type (Jump Type)
+   
+RISC-V Instruction Sets
+<img width="772" alt="3808 1535301636" src="https://github.com/user-attachments/assets/f85cfaf6-348d-4571-83c3-7078501960c8">
+
 </details>
 
 
