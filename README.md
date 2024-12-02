@@ -354,8 +354,9 @@ Example: If rd = 01010, it means the result is stored in register x10.
         beq (branch if equal): funct3 = 000.
         bne (branch if not equal): funct3 = 001.
 
-5. The J-type (Jump-type)
-       The J-type (Jump-type) instruction format in RISC-V is designed for unconditional jump operations. These instructions allow the program to change its execution flow         by jumping to an address specified by a 12-bit signed immediate value. The immediate value is used to calculate the target address relative to the current Program           Counter (PC).
+5. **The J-type (Jump-type)**
+       The J-type (Jump-type) instruction format in RISC-V is designed for unconditional jump operations. These instructions allow the program to change its execution flow         by jumping to an address specified by a 
+       12-bit signed immediate value. The immediate value is used to calculate the target address relative to the current Program           Counter (PC).
 
       The J-type format has the following fields:
 
@@ -377,7 +378,8 @@ Example: If rd = 01010, it means the result is stored in register x10.
       imm[11]: Second most significant bit (bit 11).
       imm[19:12]: Lower 8 bits of the immediate value.
 
-      The immediate value is signed and used to calculate the target address relative to the current instruction. The immediate value is shifted left by 1 bit to account          for the word-aligned address (because instructions are 4 bytes in RISC-V). This offset allows the jump to be within a ±1 MiB range (a total of 2^20 bytes, or 2^18            words).
+      The immediate value is signed and used to calculate the target address relative to the current instruction. The immediate value is shifted left by 1 bit to account          for the word-aligned address (because 
+      instructions are 4 bytes in RISC-V). This offset allows the jump to be within a ±1 MiB range (a total of 2^20 bytes, or 2^18            words).
    
       Example: If imm[20] = 0, imm[10:1] = 0101010101, imm[11] = 1, and imm[19:12] = 10101010, the full immediate value would be 0101010101101010101 (in binary), which is         0x55555 (349525 in decimal).
    
