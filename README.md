@@ -112,14 +112,15 @@ RISC-V Instruction Sets
 1. R-Type:
 The R-type instruction format in RISC-V is designed to perform register-to-register operations. Each field has a specific role, contributing to the functionality and flexibility of the instruction. Here's a detailed breakdown of each field:
 
-    1. Opcode (7 bits)
+    - 1. Opcode (7 bits)
 Identifies the broad category of the instruction (e.g., arithmetic, logical, shift). The opcode determines the type of operation and the instruction format (e.g., R-type, I-type, S-type).
 
 Placement: Bits [6:0].
 
 Examples: 0110011: R-type operations (add, sub, and, or, etc.).
-    2. rd (Destination Register, 5 bits)
-    Specify the register where the result of the operation will be stored.
+
+    - 2. rd (Destination Register, 5 bits)
+Specify the register where the result of the operation will be stored.
 
 Placement: Bits [11:7].
 
@@ -127,16 +128,8 @@ The register index ranges from 0 to 31, corresponding to the 32 general-purpose 
 Writing to x0 is effectively a NOP (writes are ignored since x0 is hardwired to 0).
 
 Example: If rd = 01010, it means the result is stored in register x10.
-    3. rd (Destination Register, 5 bits)
-    4. rs1 (Source Register 1, 5 bits)
-    5. rs2 (Source Register 2, 5 bits)
-    6. funct7 (Function Code, 7 bits)
 
-
-
-
-
-  
+    - 3. rd (Destination Register, 5 bits)
 Specifies the specific operation to be performed within the instruction category defined by opcode.
 
 Placement: Bits [14:12].
@@ -150,7 +143,7 @@ Examples:
 For an ADD instruction: funct3 = 000.
 For an AND instruction: funct3 = 111.
 
- 
+    - 4. rs1 (Source Register 1, 5 bits)
 Specifies the first source register containing one of the operands.
 
 Placement: Bits [19:15].
@@ -159,7 +152,7 @@ The register index ranges from 0 to 31, like rd. It holds the value used in comp
 
 Example: If rs1 = 00001, it means the first operand is in register x1.
 
-  
+    - 5. rs2 (Source Register 2, 5 bits)
 Specifies the second source register containing the second operand.
 
 Placement: Bits [24:20].
@@ -168,7 +161,7 @@ Like rs1, the register index ranges from 0 to 31. It provides the second value u
 
 Example: If rs2 = 00010, it means the second operand is in register x2.
 
-      
+    - 6. funct7 (Function Code, 7 bits)
 Provides additional specificity to distinguish between operations that share the same opcode and funct3.
 
 Placement: Bits [31:25].
@@ -182,8 +175,23 @@ Examples:
 For ADD: funct7 = 0000000.
 For SUB: funct7 = 0100000.
 
-
 </details>
+
+
+
+
+
+
+  
+
+
+ 
+
+
+
+      
+
+
 
 
 
