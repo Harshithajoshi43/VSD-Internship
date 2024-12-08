@@ -1,7 +1,7 @@
 # VSD-Internship
 
 <details>
-  <summary>Task1</summary>
+  <summary>Task 1</summary>
 
 ```
 cd
@@ -686,6 +686,11 @@ Fields:
 32-bit Representation: 0000000 00010 00011 000 00011 0111011
 
 </details>
+
+<details>
+  <summary>Task 3</summary>
+</details>
+
 
 
 
