@@ -757,7 +757,8 @@ All the instructions in the given verilog file is hard-coded. Hard-coded means t
 
 4.OR R9, R2, R5
 
-![WhatsApp Image 2024-12-08 at 22 21 57_6de4ccb1](https://github.com/user-attachments/assets/3bd3f66b-450c-4430-b824-0183c174a740)
+![WhatsApp Image 2024-12-08 at 23 04 46_e89d44bd](https://github.com/user-attachments/assets/0dcbbf5f-7e7d-4cc7-9cf7-9c7b1679243d)
+
 
 5.XOR R10, R1, R4
 
