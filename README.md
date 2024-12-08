@@ -696,6 +696,26 @@ In Verilog design workflows, simulations are typically executed using tools like
 
 Installing iverilog using ```command sudo apt install iverilog gtkwave```
 
+1. Create a directory with your name using the command:
+mkdir <your_name>
+
+2. Use the ```**touch**``` command to create two Verilog files named harshitha_rv32i.v and harshitha_rv32i_tb.v:
+   
+```touch harshitha_rv32i.v harshitha_rv32i_tb.v```
+
+3. Copy the required Verilog code and testbench code from the reference GitHub repository into the respective files.
+
+4. To compile and simulate the Verilog code, execute the following commands:
+
+```iverilog -o harshitha_rv32i harshitha_rv32i.v harshitha_rv32i_tb.v```
+```./harshitha_rv32i``` 
+
+it will create iiitb_rv32i.vcd file which is used for gtkwave.
+
+5. Open the gtkwave using command gtkwave ```iiitb_rv32i.vcd```
+
+
+
 
 </details>
 
