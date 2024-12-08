@@ -722,6 +722,17 @@ it will create iiitb_rv32i.vcd file which is used for gtkwave.
 
 5. Open the gtkwave using command gtkwave ```iiitb_rv32i.vcd```
 
+All the instructions in the given verilog file is hard-coded. Hard-coded means that instead of following the RISCV specifications bit pattern, the designer has hard-coded each instructions based on their own pattern. Hence the 32-bits instruction that we generated in Task-2 will not match with the given instruction.
+
+
+| Operation     | Description                 | Standard RISC-V ISA    | Hard-Coded ISA|
+|---------------|-----------------------------|------------------------|---------------|
+| Feature 1     | Implements core logic       | Completed              |               |
+| Feature 2     | Adds user interface         | In Progress            |               |
+| Feature 3     | Integration with database   | Pending                |               |
+
+	Description		
+
 
 
    
