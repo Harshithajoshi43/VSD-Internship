@@ -727,23 +727,20 @@ All the instructions in the given verilog file is hard-coded. Hard-coded means t
 
 | Operation     | Description                 | Standard RISC-V ISA    | Hard-Coded ISA|
 |---------------|-----------------------------|------------------------|---------------|
-| ADD R6, R2, R1| Adds the values in R2 and R1,stores result in R6|32'h00110333|32'h02208300 
-                   	                      |               |
-| Feature 2     | Adds user interface         | In Progress            |               |
-| Feature 3     | Integration with database   | Pending                |               |
+| ADD R6, R2, R1| Adds the values in R2 and R1,stores result in R6|32'h00110333|32'h02208300|                   	                   
+|SUB R7, R1, R2|	Subtracts the value in R2 from R1, stores result in R7|	32'h402083b3|	32'h02209380|
+|AND R8, R1, R3	|Performs bitwise AND between R1 and R3, stores in R8	|32'h0030f433	|32'h0230a400|
+|OR R9, R2, R5	|Performs bitwise OR between R2 and R5, stores in R9	|32'h005164b3	|32'h02513480|
+|XOR R10, R1, R4	|Performs bitwise XOR between R1 and R4, stores in R10	|32'h0040c533|	32'h0240c500|
+|SLT R1, R2, R4	|Sets R1 to 1 if R2 < R4, else sets to 0	32'h0045a0b3	|32'h02415580|
+|ADDI R12, R4, 5	|Adds immediate value 5 to R4, stores result in R12	|32'h004120b3	|32'h00520600|
+|BEQ R0, R0, 15	|Branches to offset 15 if R0 equals R0	32'h00000f63	|32'h00f00002|
+|SW R3, R1, 2	|Stores word from R3 to memory address (R1 + 2)	32'h0030a123	|32'h00209181|
+|LW R13, R1, 2	|Loads word from memory address (R1 + 2) into R13	32'h0020a683	|32'h00208681|
+|SRL R16, R14, R2|	Shifts R14 right by the value in R2, stores in R16	32'h0030a123|	32'h00271803|
+|SLL R15, R1, R2|	Shifts R1 left by the value in R2, stores in R15	32'h002097b3	|32'h00208783|		
 
 
-SUB R7, R1, R2	Subtracts the value in R2 from R1, stores result in R7	32'h402083b3	32'h02209380
-AND R8, R1, R3	Performs bitwise AND between R1 and R3, stores in R8	32'h0030f433	32'h0230a400
-OR R9, R2, R5	Performs bitwise OR between R2 and R5, stores in R9	32'h005164b3	32'h02513480
-XOR R10, R1, R4	Performs bitwise XOR between R1 and R4, stores in R10	32'h0040c533	32'h0240c500
-SLT R1, R2, R4	Sets R1 to 1 if R2 < R4, else sets to 0	32'h0045a0b3	32'h02415580
-ADDI R12, R4, 5	Adds immediate value 5 to R4, stores result in R12	32'h004120b3	32'h00520600
-BEQ R0, R0, 15	Branches to offset 15 if R0 equals R0	32'h00000f63	32'h00f00002
-SW R3, R1, 2	Stores word from R3 to memory address (R1 + 2)	32'h0030a123	32'h00209181
-LW R13, R1, 2	Loads word from memory address (R1 + 2) into R13	32'h0020a683	32'h00208681
-SRL R16, R14, R2	Shifts R14 right by the value in R2, stores in R16	32'h0030a123	32'h00271803
-SLL R15, R1, R2	Shifts R1 left by the value in R2, stores in R15	32'h002097b3	32'h00208783		
 
 
 
