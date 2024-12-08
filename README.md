@@ -695,6 +695,7 @@ Fields:
 In Verilog design workflows, simulations are typically executed using tools like Icarus Verilog. During these simulations, waveform data is captured in files such as Value Change Dump (VCD). These files record the state of signals over time and are later viewed using waveform viewers like GTKWave. This graphical visualization helps in analyzing signal transitions and verifying both the design's functionality and timing behavior.
 
 Installing iverilog using ```command sudo apt install iverilog gtkwave```
+![Screenshot 2024-12-07 152748](https://github.com/user-attachments/assets/2b229ce4-c07b-47a1-9a62-1abba3e1dddc)
 
 1. Create a directory with your name using the command:
 mkdir <your_name>
@@ -704,7 +705,11 @@ mkdir <your_name>
 ```touch harshitha_rv32i.v harshitha_rv32i_tb.v```
 
 3. Copy the required Verilog code and testbench code from the reference GitHub repository into the respective files.
-
+      
+  ![Screenshot 2024-12-07 164503](https://github.com/user-attachments/assets/208babda-6267-4ee6-a4d5-272164f2e517)
+  ![Screenshot 2024-12-07 164435](https://github.com/user-attachments/assets/f99ddf5f-014d-4f2d-b048-047d7ef1b37c)
+  ![Screenshot 2024-12-07 164503](https://github.com/user-attachments/assets/49b3a5c7-2af4-4610-96ef-1e90ec3daba1)
+  
 4. To compile and simulate the Verilog code, execute the following commands:
 
     ```iverilog -o harshitha_rv32i harshitha_rv32i.v harshitha_rv32i_tb.v```
@@ -712,12 +717,11 @@ mkdir <your_name>
 
 it will create iiitb_rv32i.vcd file which is used for gtkwave.
 
-5. Open the gtkwave using command gtkwave ```iiitb_rv32i.vcd```
-![Screenshot 2024-12-07 152748](https://github.com/user-attachments/assets/2b229ce4-c07b-47a1-9a62-1abba3e1dddc)
-![Screenshot 2024-12-07 164503](https://github.com/user-attachments/assets/208babda-6267-4ee6-a4d5-272164f2e517)
-![Screenshot 2024-12-07 164435](https://github.com/user-attachments/assets/f99ddf5f-014d-4f2d-b048-047d7ef1b37c)
-![Screenshot 2024-12-07 164503](https://github.com/user-attachments/assets/49b3a5c7-2af4-4610-96ef-1e90ec3daba1)
 ![Screenshot 2024-12-07 170508](https://github.com/user-attachments/assets/f82eae06-6b85-4e4a-b035-15095d2ce846)
+
+
+5. Open the gtkwave using command gtkwave ```iiitb_rv32i.vcd```
+
 
 
    
