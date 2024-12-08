@@ -52,7 +52,7 @@ riscv64-unknown-elf-gcc -O1 mabi=lp64 -march=rv64i -osum1ton.c sum1ton.c
 </details>
 
 <details>
- <summary>Task2</summary>
+ <summary>Task 2</summary>
 
 ```
 riscv64-unknown-elf-gcc -O1 mabi=lp64 -march=rv64i -osum1ton.c sum1ton.c
@@ -94,7 +94,7 @@ spike pk simplecalc.o
 ![Screenshot 2024-11-28 005212](https://github.com/user-attachments/assets/3ac04ab4-e2ee-4d58-8e6a-ed56fe0cdffa)
 </details>
 <details>
-  <summary>Task3</summary>
+  <summary>Task 3</summary>
 
 RISC-V RV32 refers to a 32-bit RISC-V instruction set architecture (ISA) implementation. It is an open, royalty-free ISA designed to be simple, efficient, and scalable for various applications. The RISC-V RV32 instruction set has 6 main instruction types, based on their encoding format. These types are determined by how operands and immediate values are encoded in the instruction.
 The six instruction types are:
@@ -688,7 +688,15 @@ Fields:
 </details>
 
 <details>
-  <summary>Task 3</summary>
+  <summary>Task 4</summary>
+
+  **Functional simulation of RISC-V instructions modeled as a Verilog netlist and observe the output waveforms using GTKWave**.
+  
+In Verilog design workflows, simulations are typically executed using tools like Icarus Verilog. During these simulations, waveform data is captured in files such as Value Change Dump (VCD). These files record the state of signals over time and are later viewed using waveform viewers like GTKWave. This graphical visualization helps in analyzing signal transitions and verifying both the design's functionality and timing behavior.
+
+Installing iverilog using ```command sudo apt install iverilog gtkwave```
+
+
 </details>
 
 
