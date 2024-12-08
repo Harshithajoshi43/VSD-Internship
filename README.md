@@ -699,7 +699,7 @@ Installing iverilog using ```command sudo apt install iverilog gtkwave```
 1. Create a directory with your name using the command:
 mkdir <your_name>
 
-2. Use the ```**touch**``` command to create two Verilog files named harshitha_rv32i.v and harshitha_rv32i_tb.v:
+2. Use the ```touch``` command to create two Verilog files named harshitha_rv32i.v and harshitha_rv32i_tb.v:
    
 ```touch harshitha_rv32i.v harshitha_rv32i_tb.v```
 
@@ -707,12 +707,20 @@ mkdir <your_name>
 
 4. To compile and simulate the Verilog code, execute the following commands:
 
-```iverilog -o harshitha_rv32i harshitha_rv32i.v harshitha_rv32i_tb.v```
-```./harshitha_rv32i``` 
+    ```iverilog -o harshitha_rv32i harshitha_rv32i.v harshitha_rv32i_tb.v```
+    ```./harshitha_rv32i``` 
 
 it will create iiitb_rv32i.vcd file which is used for gtkwave.
 
 5. Open the gtkwave using command gtkwave ```iiitb_rv32i.vcd```
+![Screenshot 2024-12-07 152748](https://github.com/user-attachments/assets/2b229ce4-c07b-47a1-9a62-1abba3e1dddc)
+![Screenshot 2024-12-07 164503](https://github.com/user-attachments/assets/208babda-6267-4ee6-a4d5-272164f2e517)
+![Screenshot 2024-12-07 164435](https://github.com/user-attachments/assets/f99ddf5f-014d-4f2d-b048-047d7ef1b37c)
+![Screenshot 2024-12-07 164503](https://github.com/user-attachments/assets/49b3a5c7-2af4-4610-96ef-1e90ec3daba1)
+![Screenshot 2024-12-07 170508](https://github.com/user-attachments/assets/f82eae06-6b85-4e4a-b035-15095d2ce846)
+
+
+   
 
 
 
