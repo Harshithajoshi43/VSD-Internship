@@ -740,6 +740,57 @@ All the instructions in the given verilog file is hard-coded. Hard-coded means t
 |SRL R16, R14, R2|	Shifts R14 right by the value in R2, stores in R16 |	32'h0030a123|	32'h00271803|
 |SLL R15, R1, R2|	Shifts R1 left by the value in R2, stores in R15	| 32'h002097b3	|32'h00208783|		
 
+# Veifying instructions using Gtkwave
+
+1.ADD R6, R2, R1
+
+![WhatsApp Image 2024-12-08 at 22 21 58_02a33daa](https://github.com/user-attachments/assets/76a88b92-0a09-4f2f-b840-d6313183c61f)
+
+
+2.SUB R7, R1, R2
+
+![WhatsApp Image 2024-12-08 at 22 21 57_6de4ccb1](https://github.com/user-attachments/assets/be696bfa-4098-4e90-aa7a-55536012a721)
+
+3.AND R8, R1, R3
+
+![WhatsApp Image 2024-12-08 at 22 21 57_f626c078](https://github.com/user-attachments/assets/347fbc9d-e616-45d4-9805-4f43c7447249)
+
+4.OR R9, R2, R5
+
+![WhatsApp Image 2024-12-08 at 22 21 57_6de4ccb1](https://github.com/user-attachments/assets/3bd3f66b-450c-4430-b824-0183c174a740)
+
+5.XOR R10, R1, R4
+
+![WhatsApp Image 2024-12-08 at 22 21 56_dba82745](https://github.com/user-attachments/assets/853e546c-c609-40cb-86bc-8d9754acac0b)
+
+6.SLT R1, R2, R4
+
+![WhatsApp Image 2024-12-08 at 22 21 56_68749d39](https://github.com/user-attachments/assets/b12f4c20-5f16-4f29-b49e-dc97eba9f2f4)
+
+7.ADDI R12, R4, 5
+
+![WhatsApp Image 2024-12-08 at 22 21 55_2b9695b0](https://github.com/user-attachments/assets/539d4a9a-9a8f-44a2-bca6-c329974f6dd5)
+
+8.SW R3, R1, 2
+
+![WhatsApp Image 2024-12-08 at 22 21 55_98ef53a6](https://github.com/user-attachments/assets/7b3cad3c-2450-49c2-9e28-67385472e31e)
+
+9.SRL r16, r11, r2
+
+![Screenshot 2024-12-08 222003](https://github.com/user-attachments/assets/4c891ccc-4884-44d5-9837-3a25c00c7976)
+
+10.BEQ R0, R0, 15
+
+![WhatsApp Image 2024-12-08 at 22 56 16_f27b1b8c](https://github.com/user-attachments/assets/88521f77-f20b-4fb4-a123-7d00d8bd08c4)
+
+11. SLL R15, R1, R2
+    
+![Screenshot 2024-12-08 155153](https://github.com/user-attachments/assets/84c1e15e-78f3-4688-aaa8-37b203905be1)
+
+
+
+
+
 
 
 
