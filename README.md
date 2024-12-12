@@ -789,21 +789,15 @@ All the instructions in the given verilog file is hard-coded. Hard-coded means t
 ![Screenshot 2024-12-08 155153](https://github.com/user-attachments/assets/84c1e15e-78f3-4688-aaa8-37b203905be1)
 
 
+</details>
 
+<details>
+<summary>Task 5</summary>
 
-
-
-
-
-
-   
-
-
+## Overview
 
 
 </details>
-
-
 
 
 
