@@ -824,11 +824,26 @@ Using a secure code-based system, the ambulance driver inputs the signal's uniqu
 
 ### Table of Connection for Transmitter
 
-| Mini | SIM800L | 4x4 Keypad |
+| Mini | SIM 800L | 4x4 Keypad | 
 | -----|----------| --------- |
 | PD6 | TXD |        |
 | PD5 | RXD |        |
+| GND | GND |        |
+| PC7 | | C4          |
+| PD2 | | C3 |
+| PD3 |  | C2 |
+| PD4 |  | C1 |
+| PD7 | | R4 |
+| PD0 | | R3 |
+| PC0 |  | R2 |
+| PC1 | | R1 |
 
+
+### Table for Connection of Receiver
+| Arduino Nano | SIM 800L |
+| --------------| ---------|
+| RXD | TXD |
+| TXD | RXD |
 
 
 </details>
