@@ -794,6 +794,8 @@ All the instructions in the given verilog file is hard-coded. Hard-coded means t
 <details>
 <summary>Task 5</summary>
 
+## Ambuclear
+
 ### Introduction
 This project is designed to empower ambulance drivers to navigate traffic signals efficiently during emergencies, minimizing delays and potentially saving lives. By enabling direct control over traffic signals, ambulances can turn red signals green, clearing their path through intersections.
 
@@ -802,7 +804,19 @@ Traffic congestion in urban areas often hinders ambulances, delaying critical ca
 
 Using a secure code-based system, the ambulance driver inputs the signal's unique identifier displayed at each traffic light. The transmitter unit sends this code to the receiver unit at the traffic signal, which verifies and triggers the green light. This mechanism ensures efficient traffic management without disrupting the flow for other road users.
 
-This repository contains the hardware schematics, software code, and implementation guidelines for setting up this system. The project leverages affordable and readily available components to ensure accessibility and scalability for widespread adoption.
+### Components Required
+- VSD Squadron Mini Board
+- Arduino Nano
+- Red LED
+- Green LED
+- Yellow LED
+- SIM 800L
+- 4x4 Keypad
+- Li-ion batteries
+
+
+
+
 
 
 
