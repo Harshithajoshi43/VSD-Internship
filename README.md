@@ -814,6 +814,11 @@ Using a secure code-based system, the ambulance driver inputs the signal's uniqu
 - 4x4 Keypad
 - Li-ion batteries
 
+### Transmitter Circuit Diagram
+<img width="719" alt="ambutranscr" src="https://github.com/user-attachments/assets/067adcb6-95ea-4bef-921d-0021785c5974" />
+
+
+### Receiver Circuit Diagram
 
 
 
