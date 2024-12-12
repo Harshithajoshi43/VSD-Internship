@@ -794,7 +794,16 @@ All the instructions in the given verilog file is hard-coded. Hard-coded means t
 <details>
 <summary>Task 5</summary>
 
-## Overview
+### Introduction
+This project is designed to empower ambulance drivers to navigate traffic signals efficiently during emergencies, minimizing delays and potentially saving lives. By enabling direct control over traffic signals, ambulances can turn red signals green, clearing their path through intersections.
+
+### Overview
+Traffic congestion in urban areas often hinders ambulances, delaying critical care during emergencies. This project provides a practical and scalable solution to address this challenge by allowing ambulance drivers to control traffic signals.
+
+Using a secure code-based system, the ambulance driver inputs the signal's unique identifier displayed at each traffic light. The transmitter unit sends this code to the receiver unit at the traffic signal, which verifies and triggers the green light. This mechanism ensures efficient traffic management without disrupting the flow for other road users.
+
+This repository contains the hardware schematics, software code, and implementation guidelines for setting up this system. The project leverages affordable and readily available components to ensure accessibility and scalability for widespread adoption.
+
 
 
 </details>
