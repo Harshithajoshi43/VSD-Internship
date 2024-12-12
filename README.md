@@ -822,6 +822,12 @@ Using a secure code-based system, the ambulance driver inputs the signal's uniqu
 
 <img width="960" alt="amburec" src="https://github.com/user-attachments/assets/204bbe7b-49a8-4a41-8d9c-dd68400c677f" />
 
+### Table of Connection for Transmitter
+
+| Mini | SIM800L | 4x4 Keypad |
+| -----|----------| --------- |
+| PD6 | TXD |        |
+| PD5 | RXD |        |
 
 
 
