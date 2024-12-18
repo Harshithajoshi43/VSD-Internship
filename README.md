@@ -894,17 +894,17 @@ void GPIO_Config(void)
     // Enable clock for GPIO port D (For the pins are connected to port D)
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD , ENABLE);
 
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3 | GPIO_Pin_0 | GPIO_Pin_4 | GPIO_Pin_5; // Buttons connected to pins 2, 3, and 4 of port D
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3 | GPIO_Pin_0 | GPIO_Pin_4 | GPIO_Pin_5; 
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; // Output push-pull
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; // Maximum speed
     GPIO_Init(GPIOC, &GPIO_InitStructure); 
 
     // Light pin configuration
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7; // Assuming light is connected to pin 6 of port C
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7; 
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD; // Input with pull-up resistor
     GPIO_Init(GPIOC, &GPIO_InitStructure);
 
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4; // Assuming light is connected to pin 6 of port C
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4; 
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD; // Input with pull-up resistor
     GPIO_Init(GPIOD, &GPIO_InitStructure); 
     
@@ -1050,7 +1050,6 @@ String receivedSMS = ""; // Variable to store the received SMS
 
 void setup()
 {
-  // Begin serial communication with Arduino and Arduino IDE (Serial Monitor)
   pinMode(8,OUTPUT);
   pinMode(7,OUTPUT);
   pinMode(6,OUTPUT);
