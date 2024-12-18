@@ -817,7 +817,24 @@ Using a secure code-based system, the ambulance driver inputs the signal's uniqu
 ### Transmitter Circuit Diagram
 <img width="719" alt="ambutranscr" src="https://github.com/user-attachments/assets/067adcb6-95ea-4bef-921d-0021785c5974" />
 
-#### Transmitter Program
+### Table of Connection for Transmitter
+
+| Mini | SIM 800L | 4x4 Keypad | 
+| -----|----------| --------- |
+| PD6 | TXD |        |
+| PD5 | RXD |        |
+| GND | GND |        |
+| PC7 | | C4          |
+| PD2 | | C3 |
+| PD3 |  | C2 |
+| PD4 |  | C1 |
+| PD7 | | R4 |
+| PD0 | | R3 |
+| PC0 |  | R2 |
+| PC1 | | R1 |
+
+
+### Transmitter Program
 
 ```
 #include "debug.h"
@@ -1016,7 +1033,13 @@ void USART1_SendString(const char *str) {
 
 <img width="960" alt="amburec" src="https://github.com/user-attachments/assets/204bbe7b-49a8-4a41-8d9c-dd68400c677f" />
 
-#### Receiver Program
+### Table for Connection of Receiver
+| Arduino Nano | SIM 800L |
+| --------------| ---------|
+| RXD | TXD |
+| TXD | RXD |
+
+### Receiver Program
 
 ```
 #include <SoftwareSerial.h>
@@ -1083,30 +1106,6 @@ void updateSerial()
 }
 
 ```
-
-
-### Table of Connection for Transmitter
-
-| Mini | SIM 800L | 4x4 Keypad | 
-| -----|----------| --------- |
-| PD6 | TXD |        |
-| PD5 | RXD |        |
-| GND | GND |        |
-| PC7 | | C4          |
-| PD2 | | C3 |
-| PD3 |  | C2 |
-| PD4 |  | C1 |
-| PD7 | | R4 |
-| PD0 | | R3 |
-| PC0 |  | R2 |
-| PC1 | | R1 |
-
-
-### Table for Connection of Receiver
-| Arduino Nano | SIM 800L |
-| --------------| ---------|
-| RXD | TXD |
-| TXD | RXD |
 
 
 </details>
