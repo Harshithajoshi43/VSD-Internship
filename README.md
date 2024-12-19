@@ -875,7 +875,7 @@ void sendsms(char *sms){
     USART1_SendString("AT+CMGF=1\r\n");   // Set TEXT mode
     Delay_Ms(500);
 
-    USART1_SendString("AT+CMGS=\"+919483087190\"\r\n"); // Replace with country code and phone number
+    USART1_SendString("AT+CMGS=\"+917892539980\"\r\n"); // Replace with country code and phone number
     Delay_Ms(500);
 
     USART1_SendString(sms);           // SMS text content
