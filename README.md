@@ -901,7 +901,7 @@ void GPIO_Config(void)
 
     // Light pin configuration
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7; 
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD; // Input with pull-up resistor
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;
     GPIO_Init(GPIOC, &GPIO_InitStructure);
 
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4; 
