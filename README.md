@@ -1106,13 +1106,9 @@ void updateSerial()
 
 ```
 
+Project demo
 
-
-https://github.com/user-attachments/assets/8747d631-c745-49d5-beca-19856f0a68d9
-
-
-
-
+https://drive.google.com/file/d/11vvJWWoTyaqmB10Zlg9usAFnEkuu_c9l/view?usp=sharing
 
 
 
